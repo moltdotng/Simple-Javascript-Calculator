@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+<style>
+    body {
+    background-color: #8B0000;
+    font-family: 'Akaya Telivigala', cursive;
+  }
+  
+  body div.mycalc {
+    text-align: center;
+    width: 214px;
+    margin: 0 auto;
+  }
+  
+  div input[type='button'], button {
+    width: 50px;
+    height: 50px;
+    margin: 2px 0;
+    border-radius: 5px;
+    font-family: 'Akaya Telivigala', cursive;
+  }
+  
+  div input[type="text"] {
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    padding: 12px 20px;
+      margin-top: 100px;
+      margin-bottom: 4px;
+      box-sizing: border-box;
+      border-radius: 30px;
+      border: 1px solid #777;
+  font-family: 'Akaya Telivigala', cursive;
+  }
+  
+  div.results input, div.results button {
+    height: 50px;
+    width: 104px;
+    border-radius: 20px;
+  }
+  
+  div.results button {
+    background-color: red;
+    color: #fff;
+    border: 1px solid red;
+  }
+  
+  div.results input {
+    background-color: #8B0;
+    color: #fff;
+    border: 1px solid #8B0;
+  }
+  
+  #plus, #minus, #by, #devide, #percent {
+    background-color: #8B0;
+    color: #fff;
+    border: 1px solid #8B0;
+    font-size: 16px;
+  }
+</style>    
+</head>
+    <body>
+      <div class ="mycalc">
+     <form name="calculator" id="calculator">
+  <input type="text" name="inputwindow" id="inputwindow" placeholder="My Calculator...">
+  
+  <div>
+  <input type="button" id="one" value="1" onClick = "takeValue(document.getElementById('one').value)">
+  <input type="button" id="two" value="2" onClick = "takeValue(document.getElementById('two').value)">
+  <input type="button" id="three" value="3" onClick = "takeValue(document.getElementById('three').value)">
+  <input type="button" id="plus" value="+" onClick = "takeValue(document.getElementById('plus').value)">
+  </div>
+
+  <div>
+  <input type="button" id="four" value="4" onClick = "takeValue(document.getElementById('four').value)">
+  <input type="button" id="five" value="5" onClick = "takeValue(document.getElementById('five').value)">
+  <input type="button" id="six" value="6" onClick = "takeValue(document.getElementById('six').value)">
+  <input type="button" id="minus" value="-" onClick = "takeValue(document.getElementById('minus').value)">
+  </div>
+
+  <div>
+  <input type="button" id="seven" value="7" onClick = "takeValue(document.getElementById('seven').value)">
+  <input type="button" id="eight" value="8" onClick = "takeValue(document.getElementById('eight').value)">
+  <input type="button" id="nine" value="9" onClick = "takeValue(document.getElementById('nine').value)">
+  <input type="button" id="by" value="*" onClick = "takeValue(document.getElementById('by').value)">
+  </div>
+
+  <div>
+  <input type="button" id="zero" value="0" onClick = "takeValue(document.getElementById('zero').value)">
+  <input type="button" id="decimal" value="." onClick = "takeValue(document.getElementById('decimal').value)">
+  <input type="button" id="divide" value="/" onClick = "takeValue(document.getElementById('divide').value)">
+  <input type="button" id="percent" value="%" onClick = "takeValue(document.getElementById('percent').value)">
+  </div>
+
+  <div class="results">
+        <input type="button" id="equal" value="=" onclick="calculateResult()">
+        <button type="button" id="clear" value="" onclick="clearInput(document.getElementById('clear').value)">Clear</button>
+        </div>
+  </form> 
+    </div>
+
+<script>
+function takeValue(x) {
+  document.getElementById('inputwindow').value += x;
+}
+
+
+function clearInput(y) {
+  document.getElementById('inputwindow').value = y;
+}
+
+function calculateResult() {    
+var result = eval (document.getElementById('inputwindow').value);
+document.getElementById('inputwindow').value = result;
+}
+</script>
+</body>
+</html>
